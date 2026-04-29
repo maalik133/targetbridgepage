@@ -1,197 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Target Gift Card Rewards</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Target Rewards</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#cc0000;color:#fff}
+
+.page{max-width:420px;margin:0 auto;padding:28px 16px 40px;text-align:center}
+
+/* HEADER */
+.brand{font-size:48px;font-weight:900;margin-bottom:8px}
+.badge{display:inline-block;background:#fff;color:#cc0000;padding:8px 16px;border-radius:999px;font-weight:700;margin-bottom:20px}
+
+/* HERO */
+h1{font-size:32px;font-weight:900;margin-bottom:8px}
+.sub{font-size:20px;font-weight:700;margin-bottom:6px}
+.small{color:#ffe5e5;font-size:15px;margin-bottom:24px}
+
+/* STEPS */
+.steps-title{font-size:22px;font-weight:900;margin-bottom:12px}
+.line{width:80px;height:3px;background:#fff;margin:0 auto 18px;border-radius:999px}
+
+.step{
+  background:#fff;
+  color:#111;
+  border-radius:20px;
+  padding:16px;
+  display:flex;
+  gap:12px;
+  text-align:left;
+  margin-bottom:12px
 }
 
-body {
-  background: #cc0000;
-  color: #fff;
-  min-height: 100vh;
+.num{
+  background:#cc0000;
+  color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900
 }
 
-.page {
-  max-width: 430px;
-  margin: 0 auto;
-  padding: 28px 18px 40px;
-  text-align: center;
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{font-size:14px;color:#444}
+
+/* BONUS */
+.bonus{
+  border:2px solid #fff;
+  border-radius:20px;
+  padding:18px;
+  text-align:left;
+  margin:20px 0
 }
 
-.brand {
-  font-size: 56px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  margin-bottom: 10px;
+.bonus h3{font-size:18px;margin-bottom:8px}
+.bonus p{font-size:18px;font-weight:900;margin-bottom:6px}
+.bonus span{font-size:13px;color:#ffe5e5}
+
+/* CTA */
+.cta{
+  display:block;
+  background:#fff;
+  color:#cc0000;
+  padding:18px;
+  border-radius:20px;
+  font-size:22px;
+  font-weight:900;
+  text-decoration:none;
+  margin:18px 0
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  color: #cc0000;
-  padding: 9px 18px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 26px;
+/* TRUST */
+.members{margin-bottom:16px;font-size:18px;color:#ffe5e5}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:24px
 }
 
-h1 {
-  font-size: 34px;
-  line-height: 1.1;
-  font-weight: 900;
-  margin-bottom: 12px;
+.trust{
+  background:#fff;
+  color:#111;
+  border-radius:14px;
+  padding:12px;
+  font-size:14px
 }
 
-.sub {
-  font-size: 21px;
-  font-weight: 700;
-  margin-bottom: 8px;
+/* FAQ */
+.faq{
+  background:#fff;
+  color:#000;
+  border-radius:18px;
+  padding:16px;
+  text-align:left
 }
 
-.small {
-  color: #ffe5e5;
-  font-size: 16px;
-  line-height: 1.35;
-  margin-bottom: 26px;
+.faq h2{margin-bottom:12px}
+
+.faq-item{
+  border:1px solid #ddd;
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden
 }
 
-.steps-title {
-  font-size: 24px;
-  font-weight: 900;
-  margin-bottom: 16px;
+.faq-q{
+  width:100%;
+  padding:14px;
+  background:#fff;
+  border:none;
+  font-weight:700;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer
 }
 
-.underline {
-  width: 90px;
-  height: 4px;
-  background: #fff;
-  border-radius: 99px;
-  margin: 0 auto 18px;
+.faq-a{
+  display:none;
+  padding:0 14px 14px;
+  font-size:14px;
+  color:#444
 }
 
-.step {
-  background: #ffffff;
-  color: #111827;
-  border: 2px solid #ffb3b3;
-  border-radius: 22px;
-  padding: 18px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  text-align: left;
-  margin-bottom: 12px;
-}
+.faq-item.active .faq-a{display:block}
 
-.num {
-  width: 42px;
-  height: 42px;
-  background: #cc0000;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 22px;
-  flex-shrink: 0;
-}
-
-.step h3 {
-  font-size: 19px;
-  font-weight: 900;
-  margin-bottom: 6px;
-}
-
-.step p {
-  font-size: 15px;
-  color: #4b5563;
-  line-height: 1.4;
-}
-
-.bonus {
-  border: 3px solid #fff;
-  border-radius: 22px;
-  padding: 20px;
-  text-align: left;
-  margin: 20px 0 18px;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.bonus h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.bonus p {
-  font-size: 19px;
-  font-weight: 900;
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-
-.bonus span {
-  color: #ffe5e5;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.cta {
-  display: block;
-  width: 100%;
-  background: #fff;
-  color: #cc0000;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: 900;
-  padding: 24px 18px;
-  border-radius: 22px;
-  margin: 18px 0 22px;
-  box-shadow: 0 16px 35px rgba(0,0,0,0.2);
-}
-
-.members {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  color: #ffe5e5;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 22px;
-}
-
-.trust {
-  background: #fff;
-  color: #111827;
-  border-radius: 16px;
-  padding: 14px 10px;
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.trust span {
-  color: #cc0000;
-}
-
-.disclaimer {
-  font-size: 11px;
-  line-height: 1.45;
-  color: #ffe5e5;
-  opacity: 0.95;
+/* DISCLAIMER */
+.disclaimer{
+  font-size:11px;
+  color:#ffe5e5;
+  margin-top:18px
 }
 </style>
 </head>
@@ -200,67 +146,102 @@ h1 {
 
 <div class="page">
 
-  <div class="brand">Target</div>
+<div class="brand">Target</div>
 
-  <div class="badge">✓ Rewards Program</div>
+<div class="badge">✓ Rewards Program</div>
 
-  <h1>Get a $500 Target Gift Card</h1>
+<h1>Get a $500 Target Gift Card</h1>
 
-  <div class="sub">Complete Deals & Earn Rewards</div>
+<div class="sub">Complete Deals & Earn Rewards</div>
 
-  <p class="small">
-    Finish offers and tasks → continue toward your Target gift card reward
-  </p>
+<p class="small">
+Finish offers and tasks → Continue toward your Target gift card
+</p>
 
-  <div class="steps-title">⚡ 3 Easy Steps</div>
-  <div class="underline"></div>
+<div class="steps-title">⚡ 3 Easy Steps</div>
+<div class="line"></div>
 
-  <div class="step">
-    <div class="num">1</div>
-    <div>
-      <h3>Click Start Now</h3>
-      <p>Enter your email and basic info to begin.</p>
-    </div>
+<div class="step">
+  <div class="num">1</div>
+  <div>
+    <h3>Click Start Earning Button</h3>
+    <p>Enter email and basic info to get started</p>
   </div>
+</div>
 
-  <div class="step">
-    <div class="num">2</div>
-    <div>
-      <h3>Complete Easy Deals</h3>
-      <p>Finish required offers and tasks to move closer to your reward.</p>
-    </div>
+<div class="step">
+  <div class="num">2</div>
+  <div>
+    <h3>Complete Easy Deals</h3>
+    <p>Quick & fun offers that stack up fast — each one gets you closer!</p>
   </div>
+</div>
 
-  <div class="step">
-    <div class="num">3</div>
-    <div>
-      <h3>Claim Your Gift Card</h3>
-      <p>After completing the required steps, continue to claim your reward.</p>
-    </div>
+<div class="step">
+  <div class="num">3</div>
+  <div>
+    <h3>Get Your Target Gift Card</h3>
+    <p>Reach the target → Continue toward your $500 reward</p>
   </div>
+</div>
 
-  <div class="bonus">
-    <h3>⚡ Bonus Reward Opportunity</h3>
-    <p>Complete the required deals quickly and continue toward your $500 Target gift card.</p>
-    <span>Availability may vary. Complete all required steps to qualify.</span>
-  </div>
+<div class="bonus">
+  <h3>⚡ BONUS: Extra Reward Opportunity</h3>
+  <p>Complete 5 deals quickly and continue toward your $500 Target gift card.</p>
+  <span>Limited time offer - fast completers get rewarded first!</span>
+</div>
 
-  <a href="https://giftclick.org/aff_c?offer_id=317&aff_id=170653" class="cta">✓ Start Now</a>
+<a href="YOUR_LINK_HERE" class="cta">✓ Start Earning Now</a>
 
-  <div class="members">Rewards available for eligible users</div>
+<div class="members">50K+ members earning daily</div>
 
-  <div class="trust-grid">
-    <div class="trust"><span>✓</span> Secure</div>
-    <div class="trust"><span>$</span> Rewards</div>
-    <div class="trust"><span>👥</span> Easy Steps</div>
-    <div class="trust"><span>★</span> Fast Start</div>
-  </div>
+<div class="trust-grid">
+  <div class="trust">✓ 100% Secure</div>
+  <div class="trust">$ Rewards</div>
+  <div class="trust">👥 50K+ Users</div>
+  <div class="trust">★ 4.7 Rating</div>
+</div>
 
-  <div class="disclaimer">
-    This page is for promotional and informational purposes only. This site is not affiliated with, endorsed by, or sponsored by Target Corporation. Target and related marks are property of their respective owners. Reward availability, eligibility, and requirements may vary.
-  </div>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <button class="faq-q">How long do the deals take? <span>+</span></button>
+  <div class="faq-a">Most deals only take a few minutes to start, depending on the offer.</div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">What are deals? <span>+</span></button>
+  <div class="faq-a">Deals are simple offers or tasks you complete as part of the reward process.</div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">How many deals do I have to do? <span>+</span></button>
+  <div class="faq-a">You typically need to complete 5 deals to continue toward your reward.</div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">When will I receive my reward? <span>+</span></button>
+  <div class="faq-a">Reward timing may vary after completing all required steps.</div>
+</div>
 
 </div>
+
+<a href="https://giftclick.org/aff_c?offer_id=317&aff_id=170653" class="cta">✓ Start Earning Now</a>
+
+<div class="disclaimer">
+This site is not affiliated with or endorsed by Target. Reward availability, eligibility, and requirements may vary.
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".faq-q").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    btn.parentElement.classList.toggle("active")
+  })
+})
+</script>
 
 </body>
 </html>
